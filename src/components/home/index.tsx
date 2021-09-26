@@ -7,7 +7,7 @@ export const HomeView: React.FC = () => {
             <Header as='h1'>
                 환영합니다!
                 <Header.Subheader>
-                    포럼은 포럼입니다
+                    포럼은 신다윤입니다. 
                 </Header.Subheader>
             </Header>
 

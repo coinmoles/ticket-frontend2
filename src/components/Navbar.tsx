@@ -15,7 +15,7 @@ export const Navbar: React.FC = () => {
                         className='cursor-pointer'
                     />
                 </Link> 
-                <Link to="/board">
+                <Link to="/board/list/0">
                     <Menu.Item
                         name='Board'
                         className='cursor-pointer'

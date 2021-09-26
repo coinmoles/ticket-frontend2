@@ -1,4 +1,4 @@
-import { HomeView } from '../components/HomeView';
+import { HomeView } from '../components/home';
 import { withBasicView } from '../components/withBasicView';
 
 export default function Home() {

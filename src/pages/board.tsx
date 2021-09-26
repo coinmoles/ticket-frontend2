@@ -1,8 +1,8 @@
-import { PostView } from '../components/PostView';
+import PostList from '../components/board';
 import { withBasicView } from '../components/withBasicView';
 
 export default function Board() {
-    const HomeWithBasicView = withBasicView(PostView);
+    const BoardWithBasicView = withBasicView(PostList);
 
-    return <HomeWithBasicView />
+    return <BoardWithBasicView />
 }
