@@ -1,8 +1,7 @@
 import React from 'react'
 import { RouteComponentProps, withRouter } from 'react-router'
-import { Link } from 'react-router-dom'
-import { Header, Table } from 'semantic-ui-react'
-import { PageList } from './PageList'
+import { Link, Redirect } from 'react-router-dom'
+import { Header, Table, Pagination, Container } from 'semantic-ui-react'
 import { SearchBar } from './SearchBar'
 import { PostType } from '../../lib/types'
 import { tempPostList } from '../../lib/tempContent'
@@ -48,8 +47,16 @@ const BoardView: React.FC<RouteComponentProps<PageParams>> = ({ match }) => {
                 </Table.Body>
             </Table>
 
-            <PageList />
-            <SearchBar />
+            <Container textAlign="center">
+                <Pagination 
+                    defaultactivPage ={page}
+                    siblingRange = {3}
+                    totalPages={20}
+                    
+                />
+                <div className="py-1" />
+                <SearchBar />
+            </Container>
         </div> 
     )
 }
