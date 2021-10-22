@@ -1,13 +1,13 @@
 import React from 'react'
 import { RouteComponentProps, withRouter } from 'react-router'
-import { Link, Redirect } from 'react-router-dom'
-import { Header, Table, Pagination, Container } from 'semantic-ui-react'
-import { SearchBar } from './SearchBar'
-import { PostType } from '../../lib/types'
-import { tempPostList } from '../../lib/tempContent'
+import { Link } from 'react-router-dom'
+import { Container, Header, Pagination, Table } from 'semantic-ui-react'
 import { timePassed } from '../../lib/helper/timePassed'
+import { tempPostList } from '../../lib/tempContent'
+import { PostType } from '../../lib/types'
+import { SearchBar } from './SearchBar'
 
-interface PageParams { 
+interface PageParams {
     page: string
 };
 
@@ -28,7 +28,7 @@ const BoardView: React.FC<RouteComponentProps<PageParams>> = ({ match }) => {
             </Table.Row>
         )
     )
-    
+
     return (
         <div className="items-center">
             <Header as='h1'>Board</Header>
@@ -48,16 +48,16 @@ const BoardView: React.FC<RouteComponentProps<PageParams>> = ({ match }) => {
             </Table>
 
             <Container textAlign="center">
-                <Pagination 
-                    defaultactivPage ={page}
-                    siblingRange = {3}
+                <Pagination
+                    defaultactivPage={page}
+                    siblingRange={3}
                     totalPages={20}
-                    
+
                 />
                 <div className="py-1" />
                 <SearchBar />
             </Container>
-        </div> 
+        </div>
     )
 }
 

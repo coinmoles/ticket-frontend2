@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Container, Dropdown, Form, Icon, Input } from 'semantic-ui-react'
+import { Container, Form, Icon } from 'semantic-ui-react'
 
 export const SearchBar: React.FC = () => {
     const searchOptions = [

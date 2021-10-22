@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react'
 import { Link } from 'react-router-dom'
-import { Comment, Segment, Header, Form, Icon, Divider } from 'semantic-ui-react'
+import { Comment, Divider, Form, Header, Icon, Segment } from 'semantic-ui-react'
 import { CommentType } from '../../lib/types'
 
 type CommentProps = {
@@ -16,7 +16,7 @@ const commentThread = (commentList: Array<CommentType>): Array<ReactElement> => 
         const childThread = commentThread(comment.replies)
         return (
             <Comment key={comment.id}>
-                <Comment.Avatar as='a' src={comment.author.avatar}/>
+                <Comment.Avatar as='a'  src={comment.author.avatar}/>
                 <Comment.Content>
                     <Comment.Author as='a'>{comment.author.nickname}</Comment.Author>
                     <Comment.Metadata>{comment.author.nickname}</Comment.Metadata>

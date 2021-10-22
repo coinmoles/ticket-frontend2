@@ -1,5 +1,4 @@
 import { CredentialsWithToken } from "../../util/interface/CredentialsWithToken"
-import { User } from "../../util/interface/User"
 
 export interface LoggedInState {
     isLoggedIn: true,
