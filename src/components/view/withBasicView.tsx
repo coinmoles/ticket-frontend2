@@ -1,6 +1,6 @@
 import React, { createRef, RefObject } from 'react';
 import { Ref } from 'semantic-ui-react';
-import { Navbar } from './Navbar'
+import { Navbar } from './Navbar/Navbar'
 import { PageFooter } from './PageFooter';
 
 export const withBasicView = (
