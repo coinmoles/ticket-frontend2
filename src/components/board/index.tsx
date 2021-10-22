@@ -1,5 +1,5 @@
 import BoardView from './Board';
-import { withBasicView } from '../withBasicView';
+import { withBasicView } from '../view/withBasicView';
 
 export default function BoardPage() {
     const BoardWithBasicView = withBasicView(BoardView);
