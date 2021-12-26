@@ -7,20 +7,15 @@ export const HomeView: React.FC = () => {
             <Header as='h1'>
                 환영합니다!
                 <Header.Subheader>
-                    포럼은 신다윤입니다. 
+                    예매는 천년제 공연 예매를 돕기 위해 만들어진 웹사이트입니다.
                 </Header.Subheader>
             </Header>
 
             <Header as='h3'>
                 제공되는 기능
             </Header>
-            <Message header='멀라 관리' content='아멀랑' />
-            <Message header='멀라 찾기' content='꺄르륵' />
-
-            <Header as='h3'>
-                추가 예정 기능
-            </Header>
-            <Message header='멀라 다운로드' content='멀라 다운로드' />
+            <Message header='공연 예매' content='천년제 공연을 예매합니다.' />
+            <Message header='예매 취소' content='공연 예매를 취소합니다.' />
         </div>
     )
 }
