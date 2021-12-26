@@ -13,13 +13,19 @@ export const Navbar: React.FC = () => {
                 </Link>
                 <Link to="/">
                     <Menu.Item
-                        name='Home'
+                        name='홈'
                         className='cursor-pointer'
                     />
                 </Link>
-                <Link to="/board/list/0">
+                <Link to="/book">
                     <Menu.Item
-                        name='Board'
+                        name='예매'
+                        className='cursor-pointer'
+                    />
+                </Link>
+                <Link to="/cancel">
+                    <Menu.Item
+                        name='취소'
                         className='cursor-pointer'
                     />
                 </Link>
