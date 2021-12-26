@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Container, Form, Header, Segment } from 'semantic-ui-react'
 import { performances } from '../../util/DB'
 
@@ -12,22 +12,38 @@ export const CancelView: React.FC = () => {
         }
     })
 
+    const [kyoId, setKyoId] = useState<string>("");
+    const [performanceName, setPerformanceName] = useState<string | null>(null);
+    const [password, setPassword] = useState<string>("");
+
     return (
         <Container >
             <Header as="h1" content="예매 취소" />
             <Segment>
                 <Form style={{overflow: "hidden"}}>
                     <Header as="h3" content="교번(5자리)" />
-                    <Form.Input />
+                    <Form.Input type="number" onChange={event => setKyoId(event.target.value)} value={kyoId} />
                     <Header as="h3" content="공연" />
-                    <Form.Dropdown 
+                    <Form.Dropdown
                         fluid 
-                        selection 
+                        selection
                         options={performanceOptions}
+                        onChange={(event, data) => {
+                            if (typeof data.value !== "string")
+                                alert("Something Went Wrong");
+                            else
+                                setPerformanceName(data.value);
+                        }}
                     />
                     <Header as="h3" content="비밀번호" />
-                    <Form.Input hidden />
-                    <Form.Button floated='right' content="취소" />
+                    <Form.Input onChange={(event) => setPassword(event.target.value)} value={password} />
+                    <Form.Button onClick={(event) => {
+                        event.preventDefault();
+                        alert(password)
+                        alert(kyoId)
+                        alert(performanceName);
+                    }
+                    } floated='right' content="예매" />
                 </Form>
             </Segment>
         </Container>
