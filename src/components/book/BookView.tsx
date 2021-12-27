@@ -19,13 +19,14 @@ export const BookView: React.FC = () => {
         <Container >
             <Header as="h1" content="공연 예매" />
             <Segment>
-                <Form style={{overflow: "hidden"}}>
+                <Form>
                     <Header as="h3" content="학번(4자리)" />
                     <Form.Input type="number" onChange={event => setHakId(event.target.value)} value={hakId} />
                     <Header as="h3" content="공연" />
                     <Form.Dropdown
                         fluid 
                         selection
+                        scrolling
                         options={options === null ? [] : options}
                         loading={options === null}
                         onChange={(event, data) => {
@@ -42,6 +43,7 @@ export const BookView: React.FC = () => {
                         await book(hakId, password, performanceName);
                     }
                     } floated='right' content="예매" />
+                    <div style={{clear: "both"}} />
                 </Form>
             </Segment>
         </Container>
