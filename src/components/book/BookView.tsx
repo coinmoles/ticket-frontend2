@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Container, Form, Header, Segment } from 'semantic-ui-react'
 import { performances } from '../../util/DB'
+import { book } from './book'
 
 
 export const BookView: React.FC = () => {
@@ -37,11 +38,9 @@ export const BookView: React.FC = () => {
                     />
                     <Header as="h3" content="비밀번호" />
                     <Form.Input onChange={(event) => setPassword(event.target.value)} value={password} />
-                    <Form.Button onClick={(event) => {
+                    <Form.Button onClick={async (event) => {
                         event.preventDefault();
-                        alert(password)
-                        alert(kyoId)
-                        alert(performanceName);
+                        await book(kyoId, password, performanceName);
                     }
                     } floated='right' content="예매" />
                 </Form>

@@ -6,6 +6,9 @@ import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';
 import 'semantic-ui-css/semantic.min.css'
+import dotenv from "dotenv";
+
+dotenv.config();
 
 ReactDOM.render(
     <BrowserRouter>
