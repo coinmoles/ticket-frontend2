@@ -36,7 +36,7 @@ export const BookView: React.FC = () => {
                                 setPerformanceName(data.value);
                         }}
                     />
-                    <Header as="h3" content="비밀번호" />
+                    <Header as="h3" content="비밀번호(취소 시 필요)" />
                     <Form.Input onChange={(event) => setPassword(event.target.value)} value={password} />
                     <Form.Button onClick={async (event) => {
                         event.preventDefault();

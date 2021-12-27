@@ -38,13 +38,13 @@ export const CancelView: React.FC = () => {
                                 setPerformanceName(data.value);
                         }}
                     />
-                    <Header as="h3" content="비밀번호" />
+                    <Header as="h3" content="비밀번호(예매 시 입력한 것)" />
                     <Form.Input onChange={(event) => setPassword(event.target.value)} value={password} />
                     <Form.Button onClick={async (event) => {
                         event.preventDefault();
                         await cancel(hakId, password, performanceName);
                     }
-                    } floated='right' content="예매" />
+                    } floated='right' content="취소" />
                     <div style={{clear: "both"}} />
                 </Form>
             </Segment>
