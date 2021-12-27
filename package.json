@@ -38,7 +38,7 @@
         "typescript": "~4.1.5"
     },
     "scripts": {
-        "start": "export PORT='7380' && craco start",
+        "start": "export PORT='2048' && craco start",
         "build": "craco build",
         "test": "craco test",
         "eject": "react-scripts eject"
