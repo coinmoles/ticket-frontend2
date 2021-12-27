@@ -1,22 +1,21 @@
-import React, { useState } from 'react'
-import { Container, Form, Header, Segment } from 'semantic-ui-react'
-import { performances } from '../../util/DB'
+import React, { useEffect, useState } from 'react'
+import { Container, DropdownItemProps, Form, Header, Segment } from 'semantic-ui-react'
+import { createOptions } from '../../util/helper/createOptions'
 import { book } from './book'
 
 
 export const BookView: React.FC = () => {
-    const performanceOptions = performances.map((performance) => {
-        return {
-            key: performance.name,
-            text: `${performance.name} (${performance.group})`,
-            value: performance.name
-        }
-    })
-
+    const [options, setOptions] = useState<DropdownItemProps[] | null>(null);
     const [kyoId, setKyoId] = useState<string>("");
     const [performanceName, setPerformanceName] = useState<string | null>(null);
     const [password, setPassword] = useState<string>("");
 
+    useEffect(() => {
+        createOptions().then(response => {
+            setOptions(response);
+            console.log(response);
+        });
+    }, [])
     return (
         <Container >
             <Header as="h1" content="공연 예매" />
@@ -28,7 +27,8 @@ export const BookView: React.FC = () => {
                     <Form.Dropdown
                         fluid 
                         selection
-                        options={performanceOptions}
+                        options={options === null ? [] : options}
+                        loading={options === null}
                         onChange={(event, data) => {
                             if (typeof data.value !== "string")
                                 alert("Something Went Wrong");

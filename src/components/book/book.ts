@@ -30,7 +30,7 @@ export const book = async (kyoId: string, password: string, performanceName: str
             else if (statusCode === 406) 
                 alert("이 공연은 정원이 초과됐어요!")
             else if (statusCode === 409)
-                alert("이미 이 공연을 예매했어요!");
+                alert("이미 같은 그룹의 공연을 예매했어요!");
             else
                 alert("Something Went Wrong...!");
         }
