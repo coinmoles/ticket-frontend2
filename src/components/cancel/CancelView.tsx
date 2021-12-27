@@ -13,7 +13,6 @@ export const CancelView: React.FC = () => {
     useEffect(() => {
         createOptions().then(response => {
             setOptions(response);
-            console.log(response);
         });
     }, [])
     return (

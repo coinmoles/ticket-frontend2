@@ -13,7 +13,6 @@ export const BookView: React.FC = () => {
     useEffect(() => {
         createOptions().then(response => {
             setOptions(response);
-            console.log(response);
         });
     }, [])
     return (

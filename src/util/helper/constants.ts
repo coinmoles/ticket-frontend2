@@ -1,0 +1,1 @@
+export const TICKET_BACKEND_URI="https://api.sshs-pebble.dev/ticket";

@@ -1,4 +1,5 @@
-import axios, { Axios, AxiosError } from "axios"
+import axios, { AxiosError } from "axios";
+import { TICKET_BACKEND_URI } from "../../util/helper/constants";
 
 export const cancel = async (hakId: string, password: string, performanceName: string | null) => {
     if (hakId === "") {
@@ -14,10 +15,8 @@ export const cancel = async (hakId: string, password: string, performanceName: s
         return;
     }
 
-    console.log(process.env.REACT_APP_TICKET_BACKEND_URI);
-
     try {
-        await axios.delete(process.env.REACT_APP_TICKET_BACKEND_URI + "/ticket", {
+        await axios.delete(TICKET_BACKEND_URI + "/ticket", {
             data: {
                 hakId,
                 password,

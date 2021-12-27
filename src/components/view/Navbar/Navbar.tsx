@@ -8,7 +8,7 @@ export const Navbar: React.FC = () => {
             <Menu inverted secondary stackable>
                 <Link to="/">
                     <Menu.Item header>
-                        SSHS-Forum
+                        Yemae
                     </Menu.Item>
                 </Link>
                 <Link to="/">
