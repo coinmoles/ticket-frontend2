@@ -1,7 +1,7 @@
 import axios, { Axios, AxiosError } from "axios"
 
-export const book = async (kyoId: string, password: string, performanceName: string | null) =>  {
-    if (kyoId === ""){
+export const book = async (hakId: string, password: string, performanceName: string | null) =>  {
+    if (hakId === ""){
         alert("교번을 입력해 주세요");
         return;
     }
@@ -18,7 +18,7 @@ export const book = async (kyoId: string, password: string, performanceName: str
     
     try {
         await axios.post(process.env.REACT_APP_TICKET_BACKEND_URI + "/ticket", {
-            kyoId,
+            hakId,
             password,
             performanceName
         }) 

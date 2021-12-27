@@ -1,7 +1,7 @@
 import axios, { Axios, AxiosError } from "axios"
 
-export const cancel = async (kyoId: string, password: string, performanceName: string | null) => {
-    if (kyoId === "") {
+export const cancel = async (hakId: string, password: string, performanceName: string | null) => {
+    if (hakId === "") {
         alert("교번을 입력해 주세요");
         return;
     }
@@ -19,7 +19,7 @@ export const cancel = async (kyoId: string, password: string, performanceName: s
     try {
         await axios.delete(process.env.REACT_APP_TICKET_BACKEND_URI + "/ticket", {
             data: {
-                kyoId,
+                hakId,
                 password,
                 performanceName
             }

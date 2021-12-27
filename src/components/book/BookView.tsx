@@ -6,7 +6,7 @@ import { book } from './book'
 
 export const BookView: React.FC = () => {
     const [options, setOptions] = useState<DropdownItemProps[] | null>(null);
-    const [kyoId, setKyoId] = useState<string>("");
+    const [hakId, setHakId] = useState<string>("");
     const [performanceName, setPerformanceName] = useState<string | null>(null);
     const [password, setPassword] = useState<string>("");
 
@@ -21,8 +21,8 @@ export const BookView: React.FC = () => {
             <Header as="h1" content="공연 예매" />
             <Segment>
                 <Form style={{overflow: "hidden"}}>
-                    <Header as="h3" content="교번(5자리)" />
-                    <Form.Input type="number" onChange={event => setKyoId(event.target.value)} value={kyoId} />
+                    <Header as="h3" content="학번(4자리)" />
+                    <Form.Input type="number" onChange={event => setHakId(event.target.value)} value={hakId} />
                     <Header as="h3" content="공연" />
                     <Form.Dropdown
                         fluid 
@@ -40,7 +40,7 @@ export const BookView: React.FC = () => {
                     <Form.Input onChange={(event) => setPassword(event.target.value)} value={password} />
                     <Form.Button onClick={async (event) => {
                         event.preventDefault();
-                        await book(kyoId, password, performanceName);
+                        await book(hakId, password, performanceName);
                     }
                     } floated='right' content="예매" />
                 </Form>
